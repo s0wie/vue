@@ -1,18 +1,30 @@
 <script>
-  export default {
-    props: {
-      msg: String
-    }
-  }
+export default {
+  props: {
+    msg: String,
+  },
+};
 </script>
 
-<style>
-  p {
-    font-weight: bold;
-  }
+<style scoped>
+p {
+  font-weight: bold;
+}
+
+img {
+  width: 50vw;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
 
 <template>
-  <img alt="" src="/assets/fox.jpeg" />
-  <p>{{ msg }}</p>
+  <div>
+    <img alt="" src="/assets/pokemonlogo.png" />
+    <p>{{ msg }}</p>
+  </div>
 </template>
