@@ -15,7 +15,7 @@ export default {
       pokemons: null,
       nextLink: null,
       pageCounter: 1,
-      offset: 20,
+      offset: null,
       previousOffset: null,
       pokemonID: 1,
       spriteLink: null,
@@ -40,6 +40,9 @@ export default {
           this.pokemons = pokemons.results;
           this.nextLink = pokemons.next;
           this.pageCounter += 1;
+          this.array.forEach((element) => {
+            element = element + 1;
+          });
         });
     },
     // A gap between previousOffset data and data actually being used
@@ -65,15 +68,16 @@ export default {
   <div class="body">
     <div class="poke-card-container">
       <div v-for="pokemon in pokemons" class="poke-card">
-        {{ pokemon.name }}
+        <a :href="pokemon.url"> {{ pokemon.name }}</a>
         <div>
           <img
             :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-              this.pokemonID + 3
+              pokemon.url.split('/')[6]
             }.png`"
           />
         </div>
       </div>
+      <div>{{ array }}</div>
     </div>
 
     <h1>{{ nextLink }}</h1>
