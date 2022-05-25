@@ -2,6 +2,7 @@
 export default {
   props: {
     msg: String,
+    link: String,
   },
 };
 </script>
@@ -25,6 +26,8 @@ div {
 <template>
   <div>
     <img alt="" src="/assets/pokemonlogo.png" />
-    <p>{{ msg }}</p>
+    <a :href="link"
+      ><p>{{ msg }}</p></a
+    >
   </div>
 </template>

@@ -16,9 +16,6 @@ export default {
       nextLink: null,
       pageCounter: 1,
       offset: null,
-      previousOffset: null,
-      pokemonID: 1,
-      spriteLink: null,
     };
   },
   computed: {
@@ -27,9 +24,6 @@ export default {
     },
     previousOffset() {
       return (this.previousOffset = this.pageCounter * 20 - 20);
-    },
-    spriteLink() {
-      return (this.spriteLink = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.pokemonID}.png`);
     },
   },
   methods: {
@@ -77,7 +71,6 @@ export default {
           />
         </div>
       </div>
-      <div>{{ array }}</div>
     </div>
 
     <h1>{{ nextLink }}</h1>
@@ -120,3 +113,5 @@ export default {
   display: none;
 }
 </style>
+
+// next step: Vue router
