@@ -1,5 +1,5 @@
 <template>
-  <h1>PokeListView</h1>
+  <h1>Pokémons</h1>
   <PokeList />
 </template>
 <script>
@@ -11,3 +11,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h1 {
+  text-align: center;
+}
+</style>

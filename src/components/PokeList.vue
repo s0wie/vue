@@ -63,7 +63,7 @@ export default {
     <div class="poke-card-container">
       <div v-for="pokemon in pokemons" class="poke-card">
         <a :href="pokemon.url"> {{ pokemon.name }}</a>
-        <div>
+        <div class="sprite-container">
           <img
             :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
               pokemon.url.split('/')[6]
@@ -73,31 +73,36 @@ export default {
       </div>
     </div>
 
-    <h1>{{ nextLink }}</h1>
-    <h2>Page {{ pageCounter }}</h2>
+    <!-- <h1>{{ nextLink }}</h1> -->
     <h2 class="hidden">{{ previousOffset }}</h2>
-
-    <input value="Next Page" @click="onClick" type="button" />
-    <div v-if="pageCounter > 1">
-      <input value="Prev Page" @click="onClickPrev" type="button" />
-    </div>
-    <div v-else>
-      <input value="Prev Page" @click="onClickPrev" type="button" disabled />
+    <div class="buttons-container">
+      <div v-if="pageCounter > 1">
+        <input value="Prev Page" @click="onClickPrev" type="button" />
+      </div>
+      <div v-else>
+        <input value="Prev Page" @click="onClickPrev" type="button" disabled />
+      </div>
+      <div>Page {{ pageCounter }}</div>
+      <input value="Next Page" @click="onClick" type="button" />
     </div>
   </div>
 </template>
 
 <style scoped>
 .poke-card {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 118px;
   margin: 5px;
-  background-color: aqua;
+  background-image: url("../../assets/card-background.png");
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border: 1px solid black;
 }
 
 .poke-card-container {
-  max-width: 700px;
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -111,6 +116,13 @@ export default {
 
 .hidden {
   display: none;
+}
+
+.buttons-container {
+  margin: 20px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
 
