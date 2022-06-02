@@ -98,6 +98,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   border: 1px solid black;
 }
 
@@ -123,6 +124,14 @@ export default {
   width: 500px;
   display: flex;
   justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 </style>
 

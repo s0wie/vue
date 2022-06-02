@@ -1,19 +1,25 @@
 <script>
-import String from "./components/String.vue";
+import Header from "./components/Header.vue";
 import Navigation from "./components/Navigation.vue";
 
 export default {
   components: {
-    String,
+    Header,
     Navigation,
   },
 };
 </script>
 
 <template>
-  <String msg="Gotta catch'em all!" />
+  <Header msg="Gotta catch'em all!" />
   <Navigation />
   <main>
     <router-view />
   </main>
 </template>
+
+<style>
+body {
+  background-color: lightyellow;
+}
+</style>
