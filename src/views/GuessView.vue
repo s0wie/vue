@@ -13,7 +13,8 @@ export default {
 </script>
 
 <style scoped>
-h1 {
+h1,
+p {
   text-align: center;
 }
 </style>

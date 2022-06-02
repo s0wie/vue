@@ -6,7 +6,7 @@ export default {};
   <nav>
     <ul>
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link to="/">Pokédex</router-link>
       </li>
       <li>
         <router-link to="/guess">Guess that Pokémon!</router-link>
@@ -26,7 +26,7 @@ li {
 }
 
 a:hover {
-  color: blue;
+  color: orange;
 }
 
 a {

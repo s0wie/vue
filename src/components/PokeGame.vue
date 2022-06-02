@@ -7,6 +7,7 @@ export default {
       pokemonName: null,
       guess: null,
       img: null,
+      reveal: false,
     };
   },
   computed: {
@@ -27,26 +28,39 @@ export default {
           this.pokemonName = pokemon.species.name;
         });
     },
+    reveal() {},
   },
 };
 </script>
 
 <template>
-  <div>
+  <div class="body">
+    <button @click="onClickButton">Give me a pokémon!</button>
+
     <div v-if="pokemonName">
       <div class="poke-card-container">
         <img :src="img" height="300" width="300" />
       </div>
     </div>
-    <button @click="onClickButton">Guess the pokémon</button>
-    <input type="text" v-model="guess" placeholder="Type your answer here" />
-    <div v-if="guess == pokemonName">
-      You were correct! Click the button to guess the name of a new pokémon.
+
+    <div v-if="pokemon !== null" class="guess">
+      <div>
+        This pokémon's name is:
+        <input
+          type="text"
+          v-model="guess"
+          placeholder="Type your answer here"
+        />
+      </div>
+      <div v-if="guess == pokemonName">
+        You were correct! Click the button for a new pokémon!
+      </div>
     </div>
 
-    <div>
-      <h2>Answer:</h2>
-      <p>{{ pokemonName }}</p>
+    <div v-if="pokemon !== null">
+      <p>Highlight the text below for a hint.</p>
+      <span>Hint: </span>
+      <span class="hint">{{ pokemonName }}</span>
     </div>
   </div>
 </template>
@@ -57,5 +71,19 @@ export default {
   height: 320px;
   background-image: url("../../assets/card-background.png");
   background-size: contain;
+}
+.body,
+.guess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.hint {
+  color: lightyellow;
+}
+
+button {
+  margin: 20px;
 }
 </style>
