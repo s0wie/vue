@@ -1,5 +1,4 @@
 <template>
-  <h1>Pokédex</h1>
   <PokeList />
 </template>
 <script>

@@ -8,8 +8,11 @@ export default {
 </script>
 
 <style scoped>
-p {
+h1 {
   font-weight: bold;
+  font-size: larger;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 img {
@@ -27,7 +30,7 @@ div {
   <div>
     <img alt="" src="/assets/pokemonlogo.png" />
     <a :href="link"
-      ><p>{{ msg }}</p></a
+      ><h1>{{ msg }}</h1></a
     >
   </div>
 </template>

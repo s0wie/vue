@@ -19,6 +19,8 @@ export default {};
 ul {
   display: flex;
   justify-content: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 li {
   list-style-type: none;
@@ -26,11 +28,11 @@ li {
 }
 
 a:hover {
-  color: orange;
+  color: green;
 }
 
 a {
   text-decoration: none;
-  color: blacK;
+  color: orange;
 }
 </style>

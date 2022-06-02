@@ -59,6 +59,21 @@ export default {
 </script>
 
 <template>
+  <!-- buttons -->
+  <div class="body">
+    <h2 class="hidden">{{ previousOffset }}</h2>
+    <div class="buttons-container">
+      <div v-if="pageCounter > 1">
+        <input value="Prev Page" @click="onClickPrev" type="button" />
+      </div>
+      <div v-else>
+        <input value="Prev Page" @click="onClickPrev" type="button" disabled />
+      </div>
+      <div>Pokédex Page {{ pageCounter }}</div>
+      <input value="Next Page" @click="onClick" type="button" />
+    </div>
+  </div>
+
   <div class="body">
     <div class="poke-card-container">
       <div v-for="pokemon in pokemons" class="poke-card">
@@ -71,19 +86,6 @@ export default {
           />
         </div>
       </div>
-    </div>
-
-    <!-- <h1>{{ nextLink }}</h1> -->
-    <h2 class="hidden">{{ previousOffset }}</h2>
-    <div class="buttons-container">
-      <div v-if="pageCounter > 1">
-        <input value="Prev Page" @click="onClickPrev" type="button" />
-      </div>
-      <div v-else>
-        <input value="Prev Page" @click="onClickPrev" type="button" disabled />
-      </div>
-      <div>Page {{ pageCounter }}</div>
-      <input value="Next Page" @click="onClick" type="button" />
     </div>
   </div>
 </template>
@@ -113,6 +115,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .hidden {

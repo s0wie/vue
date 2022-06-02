@@ -78,6 +78,8 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 .hint {
   color: lightyellow;
