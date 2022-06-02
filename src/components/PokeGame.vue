@@ -65,7 +65,7 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .poke-card-container {
   width: 300px;
   height: 320px;

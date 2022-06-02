@@ -15,7 +15,7 @@ export default {};
   </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 ul {
   display: flex;
   justify-content: center;
